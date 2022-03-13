@@ -22,10 +22,11 @@ docker push carlosbpy/spark-py:latest
 
 ```sh
 ## apply manifest
-kubectl apply -f manifests/spark-yaml -n spark
+kubectl apply -f manifests/spark.yaml -n spark
 ```
 
 ```sh
 ## see logs
-k logs -f pyspark-k8s-driver -n spark
+kubectl get sparkapplication pyspark-k8s
+kubectl logs -f pyspark-k8s-driver -n spark -f
 ```
